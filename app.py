@@ -559,5 +559,28 @@ dog1 = Dog()
 dog1.walk()
 dog1.bark()
 
-'''
 # Modules
+import converter # direct from converter.py without any export function like js
+from converter import lbs_to_kg # To import only specific function
+
+lbs_to_kg(100) # it can be used like other function because it was imported specifically
+
+print(converter.kg_to_lbs(70))
+
+# Exercise. Make a function in other module and call the function here to find the largest number in the array given below
+# My way
+numbers = [10, 3, 13, 9, 8]
+
+from utils import largest_num
+
+largest_num(numbers)
+
+# Mosh way
+from utils import find_max
+
+print(find_max(numbers))
+
+
+'''
+# Packages
+
