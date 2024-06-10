@@ -1,0 +1,16 @@
+WORK WITH TEAM:
+1) Fork repository
+2) git clone https://github.com/Wanglem1/pythonBeginner.git
+3) cd repo-name
+4) git remote add upstream  https://github.com/WanglemCodes/pythonBeginner.git
+5) git fetch upstream
+6) git merge upstream/main
+7) git checkout -b mac_branch
+
+READY TO GO:
+git add ., git commit -m "desc", git push origin mac_branch
+
+CREATE PULL REQUEST:
+1) Goto github.com to the forked repo
+2) click "compare and pull request"
+3) Submit the pull request
