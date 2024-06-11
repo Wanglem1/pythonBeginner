@@ -1,3 +1,5 @@
+Assuming all the ssh configuration is completed for git
+
 WORK WITH TEAM:
 1) Fork repository
 2) git clone https://github.com/Wanglem1/pythonBeginner.git
@@ -14,3 +16,7 @@ CREATE PULL REQUEST:
 1) Goto github.com to the forked repo
 2) click "compare and pull request"
 3) Submit the pull request
+
+Git branches created in local doesn't go to github/remote repo. In order,git branch can also be pushed to github.
+1) git checkout -b new_branch   -To create branch
+2) git push -u origin new_branch   -Pushing the branch
