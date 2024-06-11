@@ -248,8 +248,8 @@ quit - to quit
         print("Sorry, I don't understand that")
 
 """
+"""
 # For loops
-'''
 for item in 'Python':
     print(item)
     
@@ -362,10 +362,11 @@ print(numbers[0])
 # Unpacking
 coordinates = (1, 2, 3)
 """
+"""
 x = coordinates[0]
 y = coordinates[1]
 z = coordinates[2]
-"""
+
 # Tuples can easily make it easier than above
 x, y, z = coordinates # This can also be used with list,not just tuples
 print(x)
@@ -580,7 +581,47 @@ from utils import find_max
 
 print(find_max(numbers))
 
+# Packages
+from ecommerce.shipping import calc_shipping # Another way of import for direct use of function like below. To import more use comma ","
+import ecommerce.shipping # Folder/file
+ecommerce.shipping.calc_shipping() # Folder/file
+calc_shipping() # Direct use of function
+
+# Generate random number by built-in module
+import random
+
+for i in range(3):
+    print(random.random()) # 0 t0 1
+    print(random.randint(10, 20)) # 10 to 20
+
+# Picking leader randomly
+members = ['John', 'Mary', 'Bob', 'Mosh']
+leader = random.choice(members)
+print(leader)
+
+# Exercise.Roll a dice using random func,class and tuple
+import random
+
+class Dice:
+    def roll(self):
+        first = random.randint(1, 6)
+        second = random.randint(1, 6)
+        return (first, second) # () means tuple,or just return first, second without bracket,it'll automatically return as tuple
+
+
+dice = Dice()
+print(dice.roll())
+
+# Files and Directories
+from pathlib import Path # Path is a class,because it has 'P' in upper case
+# Absolute path - c:\Program Files\Microsoft - /usr/local/bin
+# Relative path - It's path to the package or module in project directory
+path = Path("ecommerce") # working with relative path
+print(path.exists()) # checking if path exists,result is boolean
+path_that_donExist = Path("emails")
+print(path_that_donExist.exists())
+print(path_that_donExist.mkdir()) # making directory that don't exist,prints 'none' but the directory is found in project directory
+print(path_that_donExist.rmdir()) # Now to remove
 
 '''
-# Packages
-
+"""

@@ -1,3 +1,5 @@
+
+'''
 # My way
 def largest_num(nums):
     max = 0
@@ -13,3 +15,6 @@ def find_max(numbers):
         if number > max:
             max = number
     return max
+
+
+'''
