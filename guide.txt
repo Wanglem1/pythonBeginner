@@ -20,3 +20,8 @@ CREATE PULL REQUEST:
 Git branches created in local doesn't go to github/remote repo. In order,git branch can also be pushed to github.
 1) git checkout -b new_branch   -To create branch
 2) git push -u origin new_branch   -Pushing the branch
+
+Import things to work together
+1) Never work in main branch
+2) First update main branch always
+3) Always push to working branch,the merge from main branch
