@@ -623,5 +623,42 @@ print(path_that_donExist.exists())
 print(path_that_donExist.mkdir()) # making directory that don't exist,prints 'none' but the directory is found in project directory
 print(path_that_donExist.rmdir()) # Now to remove
 
+path = Path()
+for file in path.glob('*.py'): # For all files and folders ('*')
+    print(file) # Get all the .py files in the directory
+    
 '''
 """
+# Pypi and Pip (Huh?)
+# pip install openpyxl,to install package to work with xl
+
+# Working with xl files (Create excel file for this tutorial)
+import openpyxl as xl
+from openpyxl.chart import BarChart, Reference
+
+wb = xl.load_workbook('mosh.xlsx')
+sheet = wb['Sheet1']
+cell = sheet['a1']
+cell = sheet.cell(1, 1)
+#print(cell.value) # Checking value
+#print(sheet.max_row) # Checking number of rows
+
+for row in range(2, sheet.max_row + 1): # start from 2 to ignore heading or column name
+    # print(row)
+    cell = sheet.cell(row, 3)
+    print(cell.value)
+    corrected_price = cell.value * 0.9
+    corrected_price_cell = sheet.cell(row, 4) # Creating new cell,instead of overwriting that cell with wrong price
+    corrected_price_cell.value = corrected_price
+
+values = Reference(sheet,
+          min_row=2,
+          max_row=sheet.max_row,
+          min_col=4,
+          max_col=4)
+
+chart = BarChart()
+chart.add_data(values)
+sheet.add_chart(chart, 'e2')
+
+wb.save('mosh3.xlsx') # Run and check this project directory,new file is created
